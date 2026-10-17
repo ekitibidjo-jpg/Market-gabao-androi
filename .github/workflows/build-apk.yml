@@ -23,8 +23,14 @@ jobs:
 
       - uses: android-actions/setup-android@v3
 
+            - name: Accept Android licenses
+        run: yes | sdkmanager --licenses || true
+
+            - name: Accept Android licenses
+        run: yes | sdkmanager --licenses || true
+
       - name: Install Android SDK
-        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+        run: sdkmanager --verbose "platforms;android-35" "build-tools;35.0.0"
 
       - name: Extract project
         run: unzip -o Markert_Gabao_Projet_Android.zip -d .
